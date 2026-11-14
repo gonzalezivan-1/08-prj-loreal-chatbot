@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat Assistant</title>
+    <title>L'Oréal | Smart Beauty &amp; Product Advisor</title>
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -17,16 +17,33 @@
 
   <body>
     <div class="page-wrapper">
-      <!------- Header / Branding ------->
+      <!-- Header / L'Oréal Branding -->
       <header class="site-header">
-        <h1 class="site-title">Smart Product Advisor</h1>
+        <img
+          src="img/loreal-logo.png"
+          alt="L'Oréal Paris Logo"
+          class="brand-logo"
+        />
+        <p class="brand-tagline">Because You're Worth It</p>
+        <h1 class="site-title">Smart Product &amp; Routine Advisor</h1>
       </header>
 
-      <!------- Chat Area ------->
+      <!-- Chat Area -->
       <main>
-        <section class="chatbox">
-          <div id="chatWindow" class="chat-window">
-            <!-- messages will be appended here via JS -->
+        <section class="chatbox" aria-label="L'Oréal Beauty Advisor Chat">
+          <!-- LevelUp: Displays the user's latest question right above the chat response -->
+          <div id="latestQuestionBar" class="latest-question-bar" hidden>
+            <span class="latest-question-label">Current Question:</span>
+            <span id="latestQuestionText" class="latest-question-text"></span>
+          </div>
+
+          <div
+            id="chatWindow"
+            class="chat-window"
+            role="log"
+            aria-live="polite"
+          >
+            <!-- Conversation bubbles are appended here via script.js -->
           </div>
 
           <form id="chatForm" class="chat-form">
@@ -35,11 +52,11 @@
               id="userInput"
               name="userInput"
               type="text"
-              placeholder="Ask me about products or routines…"
+              placeholder="Ask about L'Oréal skincare, makeup, haircare, or routines…"
               autocomplete="off"
               required
             />
-            <button type="submit" id="sendBtn">
+            <button type="submit" id="sendBtn" aria-label="Send message">
               <span class="material-icons">send</span>
               <span class="visually-hidden">Send</span>
             </button>
@@ -47,14 +64,13 @@
         </section>
       </main>
 
-      <!------- Footer Links ------->
+      <!-- Footer Links -->
       <footer class="site-footer">
-        <p>&copy; 2025 Company Name. All rights reserved.</p>
-        <nav>
-          <!-- These URLs are placeholders -->
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Contact</a>
+        <p>&copy; 2026 L'Oréal. All rights reserved.</p>
+        <nav aria-label="Footer navigation">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Use</a>
+          <a href="#contact">Contact</a>
         </nav>
       </footer>
     </div>
